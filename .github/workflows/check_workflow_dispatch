@@ -1,0 +1,25 @@
+name: check workflow_dispatch actions
+
+on:
+  workflow_dispatch:
+    inputs:
+      flag:
+        type: boolean
+        required: true
+        description: "Flag data"
+      choice:
+        type: choice
+        required: true
+        options:
+          - "all"
+          - "male"
+          - "female"
+        description: "Flag data"
+
+jobs:
+  printLog:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: print log
+      run: echo "Hello!"
